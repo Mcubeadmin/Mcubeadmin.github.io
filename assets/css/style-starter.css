@@ -8187,8 +8187,8 @@ a.text-dark:hover, a.text-dark:focus {
 .fa-meh-o:before {
   content: ""; }
 
-.fa-gamepad:before {
-  content: ""; }
+/* .fa-gamepad:before {
+  content: ""; } */
 
 .fa-keyboard-o:before {
   content: ""; }
@@ -9791,7 +9791,7 @@ a.navbar-brand span.fa {
 .w3l-main-banner h3.banner-text {
   font-weight: 700;
   font-size: 65px;
-  line-height: 80px;
+  line-height:230px;
   color: #ffffff; }
 
 .w3l-main-banner .banner-info p {
