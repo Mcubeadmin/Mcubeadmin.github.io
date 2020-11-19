@@ -9791,13 +9791,13 @@ a.navbar-brand span.fa {
 .w3l-main-banner h3.banner-text {
   font-weight: 700;
   font-size: 65px;
-  line-height:230px;
-  color: #ffffff; }
+  line-height:100px;
+  color: #000000; }
 
 .w3l-main-banner .banner-info p {
   font-size: 20px;
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
   display: inline-block;
   line-height: 32px;
   max-width: 750px; }
