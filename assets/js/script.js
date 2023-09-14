@@ -1,29 +1,53 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const currentYearElement = document.getElementById("currentYear");
-    const prevYearButton = document.getElementById("prevYear");
-    const nextYearButton = document.getElementById("nextYear");
+jQuery.noConflict();
+jQuery(document).ready(function($){
+								
+							
+function lightboxPhoto() {
+	
+	jQuery("a[data-gal^='prettyPhoto']").prettyPhoto({
+			animationSpeed:'fast',
+			slideshow:5000,
+			theme:'light_rounded',
+			show_title:false,
+			overlay_gallery: false
+		});
+	
+	}
+	
+		if(jQuery().prettyPhoto) {
+	
+		lightboxPhoto(); 
+			
+	}
+	
+	
+if (jQuery().quicksand) {
 
-    // Initial year (change as needed)
-    let currentYear = 2023;
+ 	// Clone applications to get a second collection
+	var $data = $(".portfolio-area").clone();
+	
+	//NOTE: Only filter on the main portfolio page, not on the subcategory pages
+	$('.portfolio-categ li').click(function(e) {
+		$(".filter li").removeClass("active");	
+		// Use the last category class as the category to filter by. This means that multiple categories are not supported (yet)
+		var filterClass=$(this).attr('class').split(' ').slice(-1)[0];
+		
+		if (filterClass == 'all') {
+			var $filteredData = $data.find('.portfolio-item2');
+		} else {
+			var $filteredData = $data.find('.portfolio-item2[data-type=' + filterClass + ']');
+		}
+		$(".portfolio-area").quicksand($filteredData, {
+			duration: 600,
+			adjustHeight: 'auto'
+		}, function () {
 
-    // Function to update the displayed year
-    function updateYear() {
-        currentYearElement.textContent = currentYear;
-        // Fetch and display publications for the current year via AJAX or other methods
-    }
+				lightboxPhoto();
+						});		
+		$(this).addClass("active"); 			
+		return false;
+	});
+	
+}//if quicksand
 
-    // Initial update
-    updateYear();
-
-    // Event listener for the "Previous Year" button
-    prevYearButton.addEventListener("click", function () {
-        currentYear--;
-        updateYear();
-    });
-
-    // Event listener for the "Next Year" button
-    nextYearButton.addEventListener("click", function () {
-        currentYear++;
-        updateYear();
-    });
 });
