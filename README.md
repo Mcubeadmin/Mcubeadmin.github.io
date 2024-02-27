@@ -1,4 +1,5 @@
-# vCard - Personal portfolio
+# vCard - Mujahid's Personal portfolio
+This is my first personal git branch, I think I learnt it.
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
 ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
